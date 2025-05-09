@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <style>
+    /* Basic body styling */
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Centered container box */
+    .container {
+      background-color: white;
+      margin-top: 60px;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .message {
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .message.success {
+      background-color: #e6ffe6;
+      color: green;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td.label {
+      font-weight: bold;
+      width: 130px;
+    }
+
+    .logout {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #d32f2f;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .logout:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= user.username || user.email %>!</h1>
+
+    <% if (success) { %>
+      <div class="message success"><%= success %></div>
+    <% } %>
+
+    <table>
+      <tr>
+        <td class="label">User ID:</td>
+        <td><%= user.id %></td>
+      </tr>
+      <tr>
+        <td class="label">Username:</td>
+        <td><%= user.username %></td>
+      </tr>
+      <tr>
+        <td class="label">Email:</td>
+        <td><%= user.email %></td>
+      </tr>
+      <tr>
+        <td class="label">Created At:</td>
+        <td><%= new Date(user.created_at).toLocaleString() %></td>
+      </tr>
+    </table>
+
+    <a class="logout" href="/auth/logout">Logout</a>
+  </div>
+</body>
+</html>
