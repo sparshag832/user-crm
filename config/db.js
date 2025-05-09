@@ -1,6 +1,6 @@
 import postgres from 'pg';
 import dotenv from 'dotenv';
-dotenv.config({ path: './.env.dev' });
+dotenv.config({ path: './.env' });
 
 const {Pool}=postgres;
 

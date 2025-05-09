@@ -1,6 +1,6 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
-dotenv.config({ path: './.env.dev' });
+dotenv.config({ path: './.env' });
 
 const secret = process.env.RECAPTCHA_SECRET;
 
