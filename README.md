@@ -25,7 +25,7 @@ USER-CRM/
 ├── services/ # Business logic layer
 ├── utils/ # Helper functions
 ├── views/ # Templating 
-├── .env.dev # Environment variables
+├── .env # Environment variables
 ├── app.js # App entry point
 ├── package.json
 └── README.md
@@ -37,7 +37,7 @@ USER-CRM/
    
  npm install -y
  
-4. Create Environment File .env.dev
+4. Create Environment File .env
    
 PORT=3000
 
