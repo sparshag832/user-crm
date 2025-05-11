@@ -48,7 +48,6 @@ export const loginUser = async (req, res) => {
         sameSite: 'strict',   
         maxAge: 15 * 60 * 1000 
     });
-
     return res.redirect('/user/profile');
 };
 
